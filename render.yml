@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: instagram-downloader-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn --bind 0.0.0.0:$PORT server:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
